@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "ggsans-normal";
+    src: url(ggsans-Normal.ttf);
+}
+
+:root {
+    --colorBackgroundPrimary: #26262e;
+    --colorBackgroundSecondary: #32333d;;
+    --colorText: #adadb1;
+    --colorTextTheme: #e7cfff;
+}
+
+body {
+    font-family: ggsans-normal;
+    background-color: var(--colorBackgroundSecondary);
+    color: var(--colorText);
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorText);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    opacity: 20%;
+    position: fixed;
+    bottom: 1pt;
+}
