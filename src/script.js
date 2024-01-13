@@ -65,10 +65,10 @@ function createLink() {
     let result = document.getElementById('result');
 
     if (channel.value) {
-        link += "?channel=" + channel.value;
+        link += "?channel=" + channel.value.toLowerCase();
 
         if (botname.value) {
-            link += "&botname=" + botname.value;
+            link += "&botname=" + botname.value.toLowerCase();
         }
         if (token.value) {
             link += "&token=" + token.value;

@@ -1,62 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Who is that Pokemon? - Configurator</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Who is that Pokemon - Configurator</h1>
-        <p>Welcome to my "Who's That Pokémon" Twitch widget project. This project contains a simple browser source for the streaming application of your choice, to allow you to play "Who's that Pokémon" with your community on twitch via the text chat, using the points system implemented by Streamelements for the rewards.</p>
-    </header>
-
-    <p>Simple Setup</p>
-    <div id="simpleSetup">
-        <p>Channel: <input type="text" id="channel" placeholder="Channel name"/></p>
-        <p>Bot Username: <input type="text" id="botname" placeholder="Bot name"/></p>
-        <p>Oauth: <input type="text" id="token" placeholder="Oauth Token"/> (Generate <a href="http://twitchapps.com/tmi/" target="_blank">here</a>)</p>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Hero -->
+    <div class="px-4 pt-5 my-5 text-center">
+      <h1 class="display-4 fw-bold text-body-emphasis">
+        Who is that Pokemon - Configurator
+      </h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Welcome to my "Who's That Pokémon" Twitch widget project. This project
+          contains a simple browser source for the streaming application of your
+          choice, to allow you to play "Who's that Pokémon" with your community
+          on twitch via the text chat, using the points system implemented by
+          Streamelements for the rewards.
+        </p>
+      </div>
+      <div class="overflow-hidden" style="max-height: 30vh">
+        <div class="container px-5">
+          <img
+            src="./Example.png"
+            class="img-fluid rounded-3 shadow-lg mb-4"
+            alt="Example image"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <p>
+        The Project is Open Source and avaliable on
+        <a
+          href="https://github.com/SillySoon/who-is-that-pokemon"
+          target="_blank"
+          >Github</a
+        >. Please consider to follow me on
+        <a href="https://twitch.tv/sillysoon" target="_blank">Twitch</a>.
+      </p>
     </div>
 
-    <p>Advanced Setup</p>
-    <div id="advancedSetup">
-        <p>AutoStart: <input type="checkbox" id="autoStart" checked/></p>
-        <p>AutoRestart: <input type="checkbox" id="autoRestart" checked/></p>
+    <div class="container py-4">
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <h2>Simple Setup</h2>
+            <p>
+              Channel:
+              <input type="text" id="channel" placeholder="Channel name" />
+            </p>
+            <p>
+              Bot Username:
+              <input type="text" id="botname" placeholder="Bot name" />
+            </p>
+            <p>
+              Oauth:
+              <input type="text" id="token" placeholder="Oauth Token" />
+              (Generate
+              <a href="http://twitchapps.com/tmi/" target="_blank">here</a>)
+            </p>
+            <h2>Browser Source Link</h2>
+            <p>
+              Copy this link and paste it in your streaming software as a
+              browser source.
+            </p>
+            <textarea id="result" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+            <h2>Advanced Setup</h2>
+            <p>AutoStart: <input type="checkbox" id="autoStart" checked /></p>
+            <p>
+              AutoRestart: <input type="checkbox" id="autoRestart" checked />
+            </p>
 
-        <p>DisplayMode:
-            <select id="displayMode">
+            <p>
+              DisplayMode:
+              <select id="displayMode">
                 <option value="animated">Animated</option>
                 <option value="original">Original</option>
-            </select>
-        </p>
+              </select>
+            </p>
 
-        <p>AutoGiveUp: <input type="checkbox" id="autoGiveUp"/></p>
-        <p>AutoGiveUpTime: <input type="number" id="autoGiveUpTime"/> seconds</p>
+            <p>AutoGiveUp: <input type="checkbox" id="autoGiveUp" /></p>
+            <p>
+              AutoGiveUpTime:
+              <input type="number" id="autoGiveUpTime" /> seconds
+            </p>
 
-        <p>RandomSpawnTime: <input type="checkbox" id="randomSpawnTime"/></p>
-        <p>randomSpawnTimeMin: <input type="number" id="randomSpawnTimeMin"/> seconds</p>
-        <p>randomSpawnTimeMax: <input type="number" id="randomSpawnTimeMax"/> seconds</p>
+            <p>
+              RandomSpawnTime: <input type="checkbox" id="randomSpawnTime" />
+            </p>
+            <p>
+              randomSpawnTimeMin:
+              <input type="number" id="randomSpawnTimeMin" /> seconds
+            </p>
+            <p>
+              randomSpawnTimeMax:
+              <input type="number" id="randomSpawnTimeMax" /> seconds
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3" id="preview">
+        <h1>Preview</h1>
+        <iframe
+          class="rounded-3 shadow-lg"
+          width="500px"
+          height="500px"
+          id="previewPokemon"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
 
-    <div id="resultLink">
-        <p>Copy this link and paste it in your streaming software as a browser source.</p>
-        <textarea name="weoe" id="result" cols="60" rows="4"></textarea>
-    </div>
-
-    <div id="preview">
-        <p>Preview</p>
-        <iframe width="500px" height="500px" id="previewPokemon" frameborder="0"></iframe>
-    </div>
-
-    <footer>
-        © 2022-2024 SillySoon
-    </footer>
+    <footer>© 2022-2024 SillySoon</footer>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

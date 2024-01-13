@@ -4,8 +4,8 @@
 }
 
 :root {
-    --colorBackgroundPrimary: #26262e;
-    --colorBackgroundSecondary: #32333d;;
+    --colorBackgroundPrimary: #191919;
+    --colorBackgroundSecondary: #232323;
     --colorText: #adadb1;
     --colorTextTheme: #e7cfff;
 }
@@ -18,11 +18,13 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--colorText);
+    color: #79b148;
 }
 
 a:hover {
+    transition: all 0.2s ease-in-out;
     text-decoration: underline;
+    color: #bbdf76;
 }
 
 footer {
