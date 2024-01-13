@@ -6,6 +6,11 @@ let autoRestart = document.getElementById('autoRestart');
 let displayMode = document.getElementById('displayMode');
 let previewPokemon = document.getElementById('previewPokemon');
 let previewTwitch = document.getElementById('previewTwitch');
+let autoGiveUp = document.getElementById('autoGiveUp');
+let autoGiveUpTime = document.getElementById('autoGiveUpTime');
+let randomSpawnTime = document.getElementById('randomSpawnTime');
+let randomSpawnTimeMin = document.getElementById('randomSpawnTimeMin');
+let randomSpawnTimeMax = document.getElementById('randomSpawnTimeMax');
 
 result.value = "Please enter a Channel Name.";
 
@@ -27,11 +32,30 @@ autoStart.addEventListener('change', function() {
 });
 
 autoRestart.addEventListener('change', function() {
-    console.log(autoRestart.checked);
     createLink();
 });
 
 displayMode.addEventListener('change', function() {
+    createLink();
+});
+
+autoGiveUp.addEventListener('change', function() {
+    createLink();
+});
+
+autoGiveUpTime.addEventListener('input', function() {
+    createLink();
+});
+
+randomSpawnTime.addEventListener('change', function() {
+    createLink();
+});
+
+randomSpawnTimeMin.addEventListener('input', function() {
+    createLink();
+});
+
+randomSpawnTimeMax.addEventListener('input', function() {
     createLink();
 });
 
@@ -49,15 +73,25 @@ function createLink() {
         if (token.value) {
             link += "&token=" + token.value;
         }
-        if (autoStart.checked) {
+        if (!autoStart.checked) {
             link += "&autoStart=" + autoStart.checked;
         }
-        if (autoRestart.checked) {
+        if (!autoRestart.checked) {
             link += "&autoRestart=" + autoRestart.checked;
         }
         if (displayMode.value) {
             link += "&displayMode=" + displayMode.value;
         }
+        if (autoGiveUp.checked && autoGiveUpTime.value) {
+            link += "&autoGiveUp=" + autoGiveUp.checked;
+            link += "&autoGiveUpTime=" + autoGiveUpTime.value;
+        }
+        if (randomSpawnTime.checked && randomSpawnTimeMin.value && randomSpawnTimeMax.value) {
+            link += "&randomSpawnTime=" + randomSpawnTime.checked;
+            link += "&randomSpawnTimeMin=" + randomSpawnTimeMin.value;
+            link += "&randomSpawnTimeMax=" + randomSpawnTimeMax.value;
+        }
+
         result.value = link;
         previewPokemon.src = link;
     } else {
