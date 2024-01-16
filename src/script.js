@@ -11,6 +11,9 @@ let autoGiveUpTime = document.getElementById('autoGiveUpTime');
 let randomSpawnTime = document.getElementById('randomSpawnTime');
 let randomSpawnTimeMin = document.getElementById('randomSpawnTimeMin');
 let randomSpawnTimeMax = document.getElementById('randomSpawnTimeMax');
+let pointReward = document.getElementById('pointReward');
+let pointRewardCommand = document.getElementById('pointRewardCommand');
+let pointRewardAmount = document.getElementById('pointRewardAmount');
 
 result.value = "Please enter a Channel Name.";
 
@@ -59,6 +62,18 @@ randomSpawnTimeMax.addEventListener('input', function() {
     createLink();
 });
 
+pointReward.addEventListener('change', function() {
+    createLink();
+});
+
+pointRewardCommand.addEventListener('input', function() {
+    createLink();
+});
+
+pointRewardAmount.addEventListener('input', function() {
+    createLink();
+});
+
 // Create Link
 function createLink() {
     let link = "https://sillysoon.de/pokemon/widget/"
@@ -90,6 +105,11 @@ function createLink() {
             link += "&randomSpawnTime=" + randomSpawnTime.checked;
             link += "&randomSpawnTimeMin=" + randomSpawnTimeMin.value;
             link += "&randomSpawnTimeMax=" + randomSpawnTimeMax.value;
+        }
+        if (pointReward.checked && pointRewardCommand.value && pointRewardAmount.value) {
+            link += "&pointReward=" + pointReward.checked;
+            link += "&pointRewardCommand=" + pointRewardCommand.value;
+            link += "&pointRewardAmount=" + pointRewardAmount.value;
         }
 
         result.value = link;
