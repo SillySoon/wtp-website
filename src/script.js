@@ -14,8 +14,13 @@ let randomSpawnTimeMax = document.getElementById('randomSpawnTimeMax');
 let pointReward = document.getElementById('pointReward');
 let pointRewardCommand = document.getElementById('pointRewardCommand');
 let pointRewardAmount = document.getElementById('pointRewardAmount');
+let showPokeDex = document.getElementById('showPokeDex');
 
-result.value = "Please enter a Channel Name.";
+if (channel.value) {
+    createLink();
+} else {
+    result.value = "Please enter a Channel Name.";
+}
 
 // Event listeners
 channel.addEventListener('input', function() {
@@ -74,6 +79,10 @@ pointRewardAmount.addEventListener('input', function() {
     createLink();
 });
 
+showPokeDex.addEventListener('change', function() { 
+    createLink();
+});
+
 // Create Link
 function createLink() {
     let link = "https://sillysoon.de/pokemon/widget/"
@@ -110,6 +119,9 @@ function createLink() {
             link += "&pointReward=" + pointReward.checked;
             link += "&pointRewardCommand=" + pointRewardCommand.value;
             link += "&pointRewardAmount=" + pointRewardAmount.value;
+        }
+        if (!showPokeDex.checked) {
+            link += "&showPokeDex=" + showPokeDex.checked;
         }
 
         result.value = link;

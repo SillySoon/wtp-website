@@ -51,7 +51,8 @@
         <a href="https://twitch.tv/sillysoon" target="_blank">Twitch</a>.
       </p>
       <p>
-        If you need any support visit my <a href="https://discord.gg/SxwuKcmYbx" target="_blank">Discord</a>.
+        If you need any support visit my
+        <a href="https://discord.gg/SxwuKcmYbx" target="_blank">Discord</a>.
       </p>
     </div>
 
@@ -93,27 +94,29 @@
             <p>
               DisplayMode:
               <select id="displayMode">
-                <option value="animated">Animated</option>
                 <option value="original">Original</option>
+                <option value="animated">Animated (Experimental)</option>
               </select>
             </p>
 
-            <p>AutoGiveUp: <input type="checkbox" id="autoGiveUp" /></p>
+            <p>AutoGiveUp: <input type="checkbox" id="autoGiveUp" checked /></p>
             <p>
               AutoGiveUpTime:
-              <input type="number" id="autoGiveUpTime" /> seconds
+              <input type="number" id="autoGiveUpTime" value="300" /> seconds
             </p>
 
             <p>
-              RandomSpawnTime: <input type="checkbox" id="randomSpawnTime" />
+              RandomSpawnTime:
+              <input type="checkbox" id="randomSpawnTime" checked />
             </p>
             <p>
               randomSpawnTimeMin:
-              <input type="number" id="randomSpawnTimeMin" /> seconds
+              <input type="number" id="randomSpawnTimeMin" value="30" /> seconds
             </p>
             <p>
               randomSpawnTimeMax:
-              <input type="number" id="randomSpawnTimeMax" /> seconds
+              <input type="number" id="randomSpawnTimeMax" value="150" />
+              seconds
             </p>
 
             <p>
@@ -121,11 +124,15 @@
             </p>
             <p>
               Add-Points Command:
-              <input type="text" id="pointRewardCommand"/>
+              <input type="text" id="pointRewardCommand" value="!addpoints" />
             </p>
             <p>
               Points Amount:
-              <input type="number" id="pointRewardAmount" /> points
+              <input type="number" id="pointRewardAmount" value="200" /> points
+            </p>
+            <p>
+              Enable PokeDex:
+              <input type="checkbox" id="showPokeDex" checked />
             </p>
           </div>
         </div>
