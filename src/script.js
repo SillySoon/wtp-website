@@ -89,39 +89,52 @@ function createLink() {
     let result = document.getElementById('result');
 
     if (channel.value) {
-        link += "?channel=" + channel.value.toLowerCase();
+        link += `?channel=${channel.value.toLowerCase()}`;
 
         if (botname.value) {
-            link += "&botname=" + botname.value.toLowerCase();
+            link += `&botname=${botname.value.toLowerCase()}`;
         }
         if (token.value) {
             link += "&token=" + token.value;
         }
         if (!autoStart.checked) {
-            link += "&autoStart=" + autoStart.checked;
+            link += `&autoStart=${autoStart.checked}`;
         }
         if (!autoRestart.checked) {
-            link += "&autoRestart=" + autoRestart.checked;
+            link += `&autoRestart=${autoRestart.checked}`;
         }
         if (displayMode.value) {
-            link += "&displayMode=" + displayMode.value;
+            link += `&displayMode=${displayMode.value}`;
+            switch (displayMode.value) {
+                case "original":
+                    link += `&min=1&max=898`
+                    break;
+                case "animated":
+                    link += `&min=1&max=898`
+                    break;
+                case "pixelart":
+                    link += `&min=1&max=649`
+                    break;
+                default:
+                    break;
+            }
         }
         if (autoGiveUp.checked && autoGiveUpTime.value) {
-            link += "&autoGiveUp=" + autoGiveUp.checked;
-            link += "&autoGiveUpTime=" + autoGiveUpTime.value;
+            link += `&autoGiveUp=${autoGiveUp.checked}`;
+            link += `&autoGiveUpTime=${autoGiveUpTime.value}`;
         }
         if (randomSpawnTime.checked && randomSpawnTimeMin.value && randomSpawnTimeMax.value) {
-            link += "&randomSpawnTime=" + randomSpawnTime.checked;
-            link += "&randomSpawnTimeMin=" + randomSpawnTimeMin.value;
-            link += "&randomSpawnTimeMax=" + randomSpawnTimeMax.value;
+            link += `&randomSpawnTime=${randomSpawnTime.checked}`;
+            link += `&randomSpawnTimeMin=${randomSpawnTimeMin.value}`;
+            link += `&randomSpawnTimeMax=${randomSpawnTimeMax.value}`;
         }
         if (pointReward.checked && pointRewardCommand.value && pointRewardAmount.value) {
-            link += "&pointReward=" + pointReward.checked;
-            link += "&pointRewardCommand=" + pointRewardCommand.value;
-            link += "&pointRewardAmount=" + pointRewardAmount.value;
+            link += `&pointReward=${pointReward.checked}`;
+            link += `&pointRewardCommand=${pointRewardCommand.value}`;
+            link += `&pointRewardAmount=${pointRewardAmount.value}`;
         }
         if (!showPokeDex.checked) {
-            link += "&showPokeDex=" + showPokeDex.checked;
+            link += `&showPokeDex=${showPokeDex.checked}`;
         }
 
         result.value = link;
