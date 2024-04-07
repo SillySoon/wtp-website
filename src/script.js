@@ -115,6 +115,9 @@ function createLink() {
                 case "pixelart":
                     link += `&min=1&max=649`
                     break;
+                case "showdown":
+                    link += `&min=1&max=649`
+                    break;
                 default:
                     break;
             }
